@@ -1,6 +1,6 @@
 <?php
 
-namespace Tachyon\Mvc;
+namespace CiyaZ\TachyonMvc;
 
 /**
  * 自定义控制器基类

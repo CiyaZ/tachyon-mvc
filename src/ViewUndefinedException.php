@@ -1,6 +1,6 @@
 <?php
 
-namespace Tachyon\Mvc;
+namespace CiyaZ\TachyonMvc;
 
 
 use Throwable;
