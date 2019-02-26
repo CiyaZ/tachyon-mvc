@@ -12,45 +12,45 @@ class Controller
     /**
      * 处理GET请求
      *
-     * @param $modelAndView ModelAndView
+     * @param $mv ModelAndView
      * @return ModelAndView
      */
-    public function get($modelAndView)
+    public function get($mv)
     {
-        return $modelAndView;
+        return $mv;
     }
 
     /**
      * 处理POST请求
      *
-     * @param $modelAndView ModelAndView
+     * @param $mv ModelAndView
      * @return ModelAndView
      */
-    public function post($modelAndView)
+    public function post($mv)
     {
-        return $modelAndView;
+        return $mv;
     }
 
     /**
      * 处理DELETE请求
      *
-     * @param $modelAndView ModelAndView
+     * @param $mv ModelAndView
      * @return ModelAndView
      */
-    public function delete($modelAndView)
+    public function delete($mv)
     {
-        return $modelAndView;
+        return $mv;
     }
 
     /**
      * 处理PUT请求
      *
-     * @param $modelAndView ModelAndView
+     * @param $mv ModelAndView
      * @return ModelAndView
      */
-    public function put($modelAndView)
+    public function put($mv)
     {
-        return $modelAndView;
+        return $mv;
     }
 }
 
@@ -75,5 +75,10 @@ function register_controller($controller)
     if ($mv == null || $mv->view == null || $mv->view == "") {
         throw new ViewUndefinedException("视图未正确配置! ModelAndView Undefined!");
     }
-    require $mv->view;
+
+    $v = $mv->view;
+    $m = $mv->model;
+    unset($mv);
+
+    require $v;
 }
